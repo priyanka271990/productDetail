@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './guard/login/login.component';
 import { RegisterComponent } from './guard/register/register.component';
 import { HeaderComponent } from './header/header.component';
+import { AuthGuard } from './guard/auth.guard'
 
 @NgModule({
   	declarations: [

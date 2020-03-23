@@ -5,9 +5,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" routerLink="login">Login </a>
-            <!-- <a class="nav-item nav-link" href="#">SignUp</a> -->
+            <a class="nav-item nav-link active" routerLink="/product/home">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link">{{isLoggedIn ? 'Add Product' : 'Login'}} </a>
+            <a class="nav-item nav-link" (click)="logout()">Logout</a>
         </div>
     </div>
 </nav>

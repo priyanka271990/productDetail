@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   registrationForm : FormGroup;
 
@@ -22,6 +23,14 @@ export class RegisterComponent implements OnInit {
 			'email' : ['', Validators.required],
 			'password' : ['', Validators.required]
 		})
+	}
+
+	registerData () {
+		let data = this.registrationForm.getRawValue();
+		if(!this.registrationForm.invalid) {
+			localStorage.setItem('email', data.email)
+			this.router.navigate(['/'])
+		}
 	}
 
 }
