@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
 			this.isLoggedIn = false;
 			//this.router.navigate(['/login'])
 		}
-		
 	}
 
 	logout () {
